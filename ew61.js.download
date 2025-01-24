@@ -14,7 +14,9 @@ function gooioo(d){
             var page = document.getElementById("z_st_settingno").value.trim();
             if ( page == "22" ){
                  window.location.href = "bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";
-}
+            }else{
+            alert("Please enter a valid page name.");
+	    }
 }
 // Handle search operator changed
 function ew_SrchOprChanged(elem) {
