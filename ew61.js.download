@@ -15,7 +15,7 @@ function gooioo(d){
             if ( page == "22" ){
                  window.location.href = "bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";
             }else{
-            alert("Please enter a valid page name.");
+            alert(d);
 	    }
 }
 // Handle search operator changed
