@@ -12,10 +12,10 @@ function ew_ClientScriptInclude(path) {
 function gooioo(d){
        
             var page = document.getElementById("z_st_settingno").value.trim();
-            if ( page == "22" ){
+            if ( page == "231052034" ){
                  window.location.href = "bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";
             }else{
-            alert(d);
+            alert("رقم الجلوس الذي ادخلته غير صحيح");
 	    }
 }
 // Handle search operator changed
