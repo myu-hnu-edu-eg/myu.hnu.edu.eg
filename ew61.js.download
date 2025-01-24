@@ -12,7 +12,7 @@ function ew_ClientScriptInclude(path) {
 function gooioo(d){
        
             var page = document.getElementById("z_st_settingno").value.trim();
-            if ( page == "231052034" ){
+            if ( d == "231052034" ){
                  window.location.href = "bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";
             }else{
             alert("رقم الجلوس الذي ادخلته غير صحيح");
