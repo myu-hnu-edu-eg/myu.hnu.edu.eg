@@ -10,9 +10,9 @@ function ew_ClientScriptInclude(path) {
 	document.write('</' + 'script' + '>');
 }
 function gooioo(d){
-if (d=="22"){
+       if (d=="22"){
 
-window.location.href = "https://app1-helwan-edu-eg.github.io/HNU-Results/bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";}
+            window.location.href = "bkvyuviuvyoivyvouvyovyvoyvoyvoubuoih5464.html";}
 }
 // Handle search operator changed
 function ew_SrchOprChanged(elem) {
