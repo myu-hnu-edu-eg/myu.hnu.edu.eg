@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - HNU</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(6, 33, 62, 0.8), rgba(6, 33, 62, 0.8)), url('hnu-campus.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: 100px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .login-container img {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #003366;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0047ab;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .login-container button:hover {
+      background-color: #003080;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="images.jpg" alt="Logo">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" placeholder="الاسم" id="username"/>
+    <input type="password" placeholder="رقم الجلوس" id="password"/>
+    <button onclick="login()">دخول</button>
+  </div>
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "هبة مصطفى عطية السيد" && pass === "922240345") {
+        // Replace current history state and redirect
+        
+        window.location.replace('grade.html');
+      } else {
+        alert("رجاء إدخال البيانات صحيحة");
+      }
+    }
+  </script>
+</body>
+</html>

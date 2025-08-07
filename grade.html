@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - HNU</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .topbar {
+      background-color: white;
+      padding: 0px 20px;
+      color: #333;
+      text-align: left;
+      font-size: 20px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-right: 15px;
+      font-size: 20px;
+      color: #333;
+    }
+    .brand-name {
+      margin: 0;
+      padding: 15px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .student-info {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-width: 200px;
+      z-index: 1000;
+    }
+    .student-info.show {
+      display: block;
+    }
+    .student-info div {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .student-info div strong {
+      color: #333;
+      display: inline-block;
+      width: 80px;
+    }
+    .logout {
+      font-size: 14px;
+      cursor: pointer;
+      color: #333;
+    }
+    .dashboard {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .course {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.08);
+    }
+    .course-info {
+      margin-bottom: 10px;
+    }
+    .course-code {
+      font-weight: bold;
+      color: #333;
+      font-size: 16px;
+    }
+    .course-name {
+      color: #666;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    .grade-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .grade {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .mark {
+      font-size: 14px;
+      color: #666;
+    }
+    h3 {
+      
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div style="display: flex; align-items: center;">
+      <button class="menu-button" onclick="toggleMenu()">
+        ☰
+      </button>
+      <div class="brand-name">my HNU</div>
+    </div>
+    <div id="studentInfo" class="student-info">
+      <div><strong>Name:</strong> هبة مصطفى عطية السيد</div>
+      <div><strong>ID:</strong> 922240345</div>
+      <div><strong>Level:</strong> First Year</div>
+      <div><strong>Program:</strong> هندسة الروبوتات والميكاترونيات</div>
+    </div>
+    <span class="logout" onclick="logout()">LOGOUT</span>
+  </div>
+  <div class="dashboard">
+    <h3>2024 - SPRING</h3>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">GEN0003-Physics (1)</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">B</div>
+        <div class="mark">82/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">GEN0009-Industrial Chemistry</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">D+</div>
+        <div class="mark">60/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">GEN0012-Critical Thinking</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">C</div>
+        <div class="mark">69/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">GEN1011-Introduction to Economics</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">B</div>
+        <div class="mark">83/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">MEC0010-Engineering Drawing</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">A</div>
+        <div class="mark">96/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">UN31-Social issues</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">C+</div>
+        <div class="mark">74/100</div>
+      </div>
+    </div>
+    <div class="course">
+      <div class="course-info">
+        <div class="course-code">GEN0002-Mathematics (1)</div>
+      </div>
+      <div class="grade-info">
+        <div class="grade">A</div>
+        <div class="mark">93/100</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Prevent going back to login page
+    window.history.pushState(null, '', window.location.href);
+    window.onpopstate = function() {
+      window.history.pushState(null, '', window.location.href);
+    };
+
+    function logout() {
+      // Clear history and redirect to login
+      
+      window.location.replace('index.html');
+    }
+    
+    function toggleMenu() {
+      const menu = document.getElementById('studentInfo');
+      menu.classList.toggle('show');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('studentInfo');
+      const menuButton = event.target.closest('.menu-button');
+      if (!menuButton && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
